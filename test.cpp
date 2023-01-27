@@ -1,17 +1,27 @@
-
-#include <iostream>
+#include<iostream>
+#include<vector>
 
 using namespace std;
 
-int main()
-{
-  int a ;
-  int b;
-  cin>>a>>b;
-   int sum = a+b;
-   cout<<sum<<endl;
-   int ans = 1;
-   ans = ans*a ;
-   cout<<ans<<endl;
-    
+#define R 4
+
+#define C 4
+
+int rowWithMax1s(bool mat[R][C]){
+
+    int rowIndex = -1;
+    int maxCount = 0;
+
+    for(int i =0;i<R;i++){
+        int count =0;
+        for(int j =0;j<C;j++){
+            if(mat[i][j] == 1){
+                count++;
+            }
+        }
+        if(count>maxCount){
+            maxCount = count;
+            rowIndex = i;
+        }
+    }
 }
